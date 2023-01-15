@@ -33,11 +33,14 @@ namespace consoleApp
         {
             if (names.Count > 0)
             {
+                var today = DateTime.Today;
+                
                 Console.WriteLine("ФИО        |         Дата рождения         |       Количество игр        |       Жёлтые карточки        |");
                 Console.WriteLine("---------------------------------------------------------------------------------------------------------");
                 for (int i = 0; i < names.Count; i++)
                 {
-                    Console.WriteLine("{0}                      {1}                         {2}                         {3}", names[i], dateOfBirth[i], playsCount[i], penaltyCount[i]);
+                    var age = ageCalc(dateOfBirth[i], i);
+                    Console.WriteLine("{0}                      {1}({2})                         {3}                         {4}", names[i], dateOfBirth[i], age, playsCount[i], penaltyCount[i]);
                 }
             }
             else
@@ -50,6 +53,21 @@ namespace consoleApp
             if (names.Count > 0)
             {
                 
+
+                Console.WriteLine("ФИО        |         Дата рождения         |       Количество игр        |       Жёлтые карточки        |");
+                Console.WriteLine("---------------------------------------------------------------------------------------------------------");
+                for (int i = 0; i < names.Count; i++)
+                {
+                    var age = ageCalc(dateOfBirth[i], i);
+                    if (age > 20 & penaltyCount[i] <= 1 & playsCount[i] >= 10)
+                    {
+                        Console.WriteLine("{0}                      {1}({2})                         {3}                         {4}", names[i], dateOfBirth[i], age, playsCount[i], penaltyCount[i]);
+                    } else
+                    {
+                        Console.WriteLine("Нет данных");
+                    }
+                    
+                }
             }
             else
             {
@@ -57,11 +75,13 @@ namespace consoleApp
             }
 
         }
-        //private static bool isValidQuestTime(string time)
-        //{
-        //    Regex checkTime = new Regex("^(?:[1]?[8-9]|2[0-3]):[0-5][0-9]$");
-        //    return checkTime.IsMatch(time);
-        //}
+        private static int ageCalc(string time, int i)
+        {
+            var today = DateTime.Today;
+            var age = today.Year - DateTime.Parse(time).Year;
+            if (DateTime.Parse(time).Date > today.AddYears(-age)) age--;
+            return age;
+        }
     }
     class Program
     {
@@ -117,13 +137,28 @@ namespace consoleApp
                     Console.WriteLine("Введите ФИО: ");
                     name = Console.ReadLine();
                     Console.WriteLine("Введите дату рождения: ");
-                    while (!isValidDate(date))
+
+                    bool successParseDate = false;
+                    while (!successParseDate)
                     {
                         date = Console.ReadLine();
                         if (!isValidDate(date))
                         {
-                            Console.WriteLine("Введите корректную дату!");
+                            Console.WriteLine("Введите корректную дату! (regex err)");
+                        } else
+                        {
+                            try
+                            {
+                                DateTime dt = DateTime.Parse(date);
+                                Console.WriteLine($"{date:d MMMM, yyyy}");
+                                successParseDate = true;
+                            } 
+                            catch (FormatException e)
+                            {
+                                Console.WriteLine("Введите корректную дату! (parsedate err)");
+                            }
                         }
+
                     }
                     Console.WriteLine("Введите количество игр: ");
                     while (!isValidPlays(playsAcc))
@@ -170,6 +205,7 @@ namespace consoleApp
         public static bool isValidPenalty(string cost)
         {
             Regex checkCost = new Regex("^\\d+$");
+
             return checkCost.IsMatch(cost);
         }
     }
