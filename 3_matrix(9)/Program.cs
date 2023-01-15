@@ -27,9 +27,9 @@ namespace Program
                 {
                     matrix[i, j] = rnd.Next(100);
                 }
-                Console.WriteLine();
-
             }
+            Console.WriteLine();
+
             int maxValue = -1;
             int maxIndex = -1;
             for (int i = 0; i < matrix.GetLength(0); i++) // print
