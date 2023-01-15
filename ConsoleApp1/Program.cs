@@ -40,7 +40,7 @@ namespace consoleApp
                 for (int i = 0; i < names.Count; i++)
                 {
                     var age = ageCalc(dateOfBirth[i], i);
-                    Console.WriteLine("{0}                      {1}({2})                         {3}                         {4}", names[i], dateOfBirth[i], age, playsCount[i], penaltyCount[i]);
+                    Console.WriteLine("{0}              {1}({2})                         {3}                         {4}", names[i], dateOfBirth[i], age, playsCount[i], penaltyCount[i]);
                 }
             }
             else
@@ -61,7 +61,7 @@ namespace consoleApp
                     var age = ageCalc(dateOfBirth[i], i);
                     if (age > 20 & penaltyCount[i] <= 1 & playsCount[i] >= 10)
                     {
-                        Console.WriteLine("{0}                      {1}({2})                         {3}                         {4}", names[i], dateOfBirth[i], age, playsCount[i], penaltyCount[i]);
+                        Console.WriteLine("{0}           {1}({2})                         {3}                         {4}", names[i], dateOfBirth[i], age, playsCount[i], penaltyCount[i]);
                     } else
                     {
                         Console.WriteLine("Нет данных");
@@ -104,10 +104,6 @@ namespace consoleApp
             string playsAcc;            // temp values for translating to int after checking on regex
             string penaltyAcc;
 
-            bool dateCheck;
-            bool playsCheck;
-            bool penaltyCheck;
-
             string mode;
 
             while (true)
@@ -116,10 +112,6 @@ namespace consoleApp
                 date = "";
                 playsAcc = "";
                 penaltyAcc = "";
-
-                dateCheck = false;
-                playsCheck = false;
-                penaltyCheck = false;
 
                 Console.WriteLine("Список(L) / Добавить(A) / Задание(Q)");
 
