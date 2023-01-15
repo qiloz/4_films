@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_football", "ConsoleApp1\4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_humans", "4_humans\4_humans.csproj", "{C362EA2B-F4F6-44D0-96FD-9FA4E4E8E617}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_matrix(9)", "3_matrix(9)\3_matrix(9).csproj", "{2CA0E38C-F81B-4CA9-AA2E-F4C8971339E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C362EA2B-F4F6-44D0-96FD-9FA4E4E8E617}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C362EA2B-F4F6-44D0-96FD-9FA4E4E8E617}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C362EA2B-F4F6-44D0-96FD-9FA4E4E8E617}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CA0E38C-F81B-4CA9-AA2E-F4C8971339E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CA0E38C-F81B-4CA9-AA2E-F4C8971339E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CA0E38C-F81B-4CA9-AA2E-F4C8971339E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CA0E38C-F81B-4CA9-AA2E-F4C8971339E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
