@@ -62,11 +62,7 @@ namespace consoleApp
                     if (age > 20 & penaltyCount[i] <= 1 & playsCount[i] >= 10)
                     {
                         Console.WriteLine("{0}           {1}({2})                         {3}                         {4}", names[i], dateOfBirth[i], age, playsCount[i], penaltyCount[i]);
-                    } else
-                    {
-                        Console.WriteLine("Нет данных");
                     }
-                    
                 }
             }
             else
@@ -182,9 +178,9 @@ namespace consoleApp
                 }
             }
         }
-        public static bool isValidDate(string time) // TODO: replace regex check
+        public static bool isValidDate(string time)
         {
-            Regex checkTime = new Regex("^(?:[01]?[0-9]|2[0-2]).[0-1][0-2].[1-2][0-9][0-9][0-9]$");
+            Regex checkTime = new Regex("^(?:[0-3][0-9]).[0-1][0-9].[1-2][0-9][0-9][0-9]$");
             return checkTime.IsMatch(time);
         }
 
