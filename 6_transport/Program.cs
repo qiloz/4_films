@@ -181,7 +181,7 @@ class Express : Transport {
 
         public override void show(){
             typeOfTransport();
-            Console.WriteLine("Код: {0} | Длина: {1} | Производитель: {2} | Дата производства: {3} | Скорость: {4} | Потребление: {5}", code, measure, manufacture, dateOfConstruct, speed, consumption); 
+            Console.WriteLine("Код: {0} | Длина: {1} | Производитель: {2} | Дата производства: {3} | Скорость: {4} | Потребление: {5}\n", code, measure, manufacture, dateOfConstruct, speed, consumption); 
         }
     }
 
@@ -207,7 +207,7 @@ class Express : Transport {
         }
 
         public override void show(){
-            Console.WriteLine("Двигатель: {0}", engine); 
+            Console.WriteLine("Двигатель: {0}\n", engine); 
         }
     }
     class AutoEquipment : Auto {
@@ -237,7 +237,7 @@ class Express : Transport {
         }
 
         public override void show(){
-            Console.WriteLine("Комплектация: {0}", equipment); 
+            Console.WriteLine("Комплектация: {0}\n", equipment); 
 
         }
     }
@@ -247,18 +247,15 @@ class Express : Transport {
         public static void Main(String[] args){
             string[] lines = System.IO.File.ReadAllLines(@"./input.txt");
             int number = lines.GetLength(0);
-            Console.WriteLine("Lines of txt: {0}", number);
 
             int countTrains = 0;
             int countCars = 0;
             int countExpress = 0;
 
             string parserMode = "";
-            // Train[] trains = new Train()[number]; 
             
             // count lines
             foreach(string line in lines) {
-                Console.WriteLine(line + "\n");
                 if (line == "[Trains]") {
                     parserMode = "trains";
                     continue;
@@ -276,11 +273,9 @@ class Express : Transport {
                         break;
                     case "cars":
                         countCars++; 
-                        Console.WriteLine("cars");
                         break;
                     case "express":
                         countExpress++; 
-                        Console.WriteLine("express");
                         break;
                 }
             }
@@ -288,38 +283,118 @@ class Express : Transport {
             
             Train trainsDefault = new Train();
             TrainDetails detailsDefault = new TrainDetails();
+
             Train[] trains = new Train[countTrains];
             TrainDetails[] details = new TrainDetails[countTrains];
+            for (int i = 0; i < countTrains; ++i) {
+                trains[i] = trainsDefault;
+                details[i] = detailsDefault;
+            }
 
-            Auto autosDefauls = new Auto();
-            Auto equipmentDefault = new AutoEquipment();
+            Auto autosDefault = new Auto();
+            AutoEquipment equipmentDefault = new AutoEquipment();
+
             Auto[] autos = new Auto[countCars];
             AutoEquipment[] equipment = new AutoEquipment[countCars];
+
+            for (int i = 0; i < countCars; ++i) {
+                autos[i] = autosDefault;
+                equipment[i] = equipmentDefault;
+            }
 
             Express expressDefault = new Express();
             Express[] express = new Express[countExpress];
             
+            for (int i = 0; i < countExpress; ++i) {
+                express[i] = expressDefault;
+            }
 
-            trains[0] = trainsDefault;
-            trains[0].show();
-
-            // Console.WriteLine("trains = {0}; cars = {1}; express = {2}", countTrains, countCars, countExpress);
             // working with classes 
+            int indexArray = 0;
             foreach(string line in lines) {
-                //Console.WriteLine(line + "\n");
                 if (line == "[Trains]") {
                     parserMode = "trains";
+                    indexArray = 0;
                     continue;
                 } else if (line == "[Cars]") {
                     parserMode = "cars";
+                    indexArray = 0;
                     continue;
                 } else if (line == "[Express]") {
                     parserMode = "express";
+                    indexArray = 0;
                     continue;
                 }
 
+                string [] elements = line.Split(' ');
+                switch (parserMode){
+                    case "trains":
+                        try
+                        {
+                        trains[indexArray].Code = Convert.ToInt32(elements[0]);
+                        trains[indexArray].Measure = Convert.ToInt32(elements[1]);
+                        trains[indexArray].Manufacture = elements[2];
+                        trains[indexArray].DateOfConstruct = elements[3];
+                        trains[indexArray].speed = Convert.ToInt32(elements[4]);
+                        details[indexArray].engine = elements[5];
+
+                        trains[indexArray].show();
+                        details[indexArray].show();
+
+                        indexArray++;
+                        }
+                        catch
+                        {
+                            Console.WriteLine("ОШИБКА: Элемент для trains [позиция: {0}] в текстовом документе отсутствует или введён некорректно", indexArray);
+                        }
+                        
+                        break;
+                    case "cars":
+                        try 
+                        {
+                        autos[indexArray].Code = Convert.ToInt32(elements[0]);
+                        autos[indexArray].Measure = Convert.ToInt32(elements[1]);
+                        autos[indexArray].Manufacture = elements[2];
+                        autos[indexArray].DateOfConstruct = elements[3];
+                        autos[indexArray].speed = Convert.ToInt32(elements[4]);
+                        autos[indexArray].power = Convert.ToInt32(elements[5]);
+                        equipment[indexArray].equipment = elements[6];
+
+                        autos[indexArray].show();
+                        equipment[indexArray].show();
+                       
+                        indexArray++;
+                        }
+                        catch
+                        {
+                            Console.WriteLine("ОШИБКА: Элемент для cars [позиция: {0}] в текстовом документе отсутствует или введён некорректно", indexArray);
+                        }
+                        break;
+                    case "express":
+                        try
+                        {
+                        express[indexArray].Code = Convert.ToInt32(elements[0]);
+                        express[indexArray].Measure = Convert.ToInt32(elements[1]);
+                        express[indexArray].Manufacture = elements[2];
+                        express[indexArray].DateOfConstruct = elements[3];
+                        express[indexArray].speed = Convert.ToInt32(elements[4]);
+                        express[indexArray].consumption = Convert.ToInt32(elements[5]);
+
+                        express[indexArray].show();
+
+                        indexArray++;
+                        }
+                        catch
+                        {
+                            Console.WriteLine("ОШИБКА: Элемент для express [позиция: {0}] в текстовом документе отсутствует или введён некорректно", indexArray);
+                        }
+                        break;
+                }
+
+
             }
         }
+
             
             //Train testTrain = new Train(1, 2, "helloworld", "4", 5);
             //Details detail = new Details(1, 2, "helloworld", "4", 5, "test");

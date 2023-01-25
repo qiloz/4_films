@@ -1,7 +1,12 @@
 [Trains]
-word1 word2 word3
-test123
+1 30 Maintainer1 01.12.2001 30 test1
+2 43 Maintainer2 04.04.2002 50 test2
+3 95 Maintainer3 04.02.2003 40 test3
 [Cars]
-placeholder
+4 40 Maintainer4 01.12.2004 30 60 engine1 
+5 50 Maintainer5 01.12.2005 30 80 engine2
+6 60 Maintainer6 01.12.2006 30 89 engine3
 [Express]
-placeholder
+7 30 Maintainer7 03.03.2007 43 2001
+8 40 Maintainer8 21.03.2009 32 21
+9 30 Maintainer9 12.02.2010 12 300
