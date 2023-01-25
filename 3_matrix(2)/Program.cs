@@ -63,6 +63,9 @@ namespace Program
             {
                 Console.Write("{0}\t", Math.Round(answerMatrix[i],2));
             }
+            Console.ReadLine();
         }
+
     }
+
 }
