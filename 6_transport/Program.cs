@@ -390,22 +390,7 @@ class Express : Transport {
                         }
                         break;
                 }
-
-
             }
         }
-
-            
-            //Train testTrain = new Train(1, 2, "helloworld", "4", 5);
-            //Details detail = new Details(1, 2, "helloworld", "4", 5, "test");
-            //Auto testAuto = new Auto(2, 10, "helloworld", "4", 5, 6);
-            //Equipment equipment = new Equipment(2, 10, "helloworld", "4", 5, 6, "Комфорт");
-            //Express testExpress = new Express(3, 122, "helloworld", "4", 5, 6);
-            // testTrain.show();
-            // detail.show();
-            //testAuto.show();
-            //equipment.show();
-            //testExpress.show();
-        }
     }
-
+}
