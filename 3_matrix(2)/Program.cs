@@ -58,17 +58,6 @@ namespace Program
                 Console.WriteLine();
             }
 
-            for (int j = 0; j < matrix.GetLength(1); j++)
-            {
-                for (int i = 0; i < matrix.GetLength(0); i++)
-                {
-                    Console.Write("{0}\t", matrix[i, j]);
-                }
-
-                Console.WriteLine();
-            }
-            //Console.WriteLine("Максимальное значение: {0}, Индекс: {1}\n", maxValue, maxIndex);
-
             Console.WriteLine();
             for (int i = 0; i < answerMatrix.GetLength(0); i++)
             {
