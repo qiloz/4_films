@@ -157,16 +157,62 @@ class Express : Transport {
         }
     }
 
+    class Details : Train {
+        string transportID = "Поезд";
+        int code;
+        int measure;
+        string manufacture;
+        string dateOfConstruct;
+        public string engine = new string("");
+
+        public override int Code {
+            get => code;
+            set => code = value;
+        }
+
+        public override int Measure {
+            get => measure;
+            set => measure = value;
+        }
+
+        public override string Manufacture {
+            get => manufacture;
+            set => manufacture = value;
+        }
+
+        public override string DateOfConstruct {
+            get => dateOfConstruct;
+            set => dateOfConstruct = value;
+        }
+
+        public Details(int code, int measure, string manufacture, string dateOfConstruct, int speed, string engine) : base (code, measure, manufacture, dateOfConstruct, speed) {
+           this.code = code;
+           this.measure = measure;
+           this.manufacture = manufacture;
+           this.dateOfConstruct = dateOfConstruct;
+           this.speed = speed;
+           this.engine = engine;
+        }
+
+        public override void typeOfTransport() {
+            Console.WriteLine("Тип: {0}", transportID);
+        }
+        
+        public override void show(){
+            Console.WriteLine("Двигатель: {0}", engine); 
+        }
+    }
 
     class Program {
         public static void Main(String[] args){
             Train testTrain = new Train(1, 2, "helloworld", "4", 5);
-            Auto testAuto = new Auto(2, 10, "helloworld", "4", 5, 6);
-            Express testExpress = new Express(3, 122, "helloworld", "4", 5, 6);
+            Details detail = new Details(1, 2, "helloworld", "4", 5, "test");
+            //Auto testAuto = new Auto(2, 10, "helloworld", "4", 5, 6);
+            //Express testExpress = new Express(3, 122, "helloworld", "4", 5, 6);
             testTrain.show();
-            testAuto.show();
-            testExpress.show();
-
+            detail.show();
+            //testAuto.show();
+            //testExpress.show();
         }
     }
 }
