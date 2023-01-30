@@ -1,21 +1,5 @@
-﻿using System.Text;
-
-namespace salaryProgram
+﻿namespace salaryProgram
 {
-    
-    //class Errors
-    //{
-    //    public void emptyError()
-    //    {
-    //        Console.WriteLine("[!] Список пуст!");
-    //    }
-    //    public void dateError() {
-    //        Console.WriteLine("[!] Введена неправильная дата!");
-    //    }
-    //    public void commandError() { 
-            
-    //    }
-    //}
     class SalaryClass
     {
         private List<String> namesOfProducts = new List<String>();
@@ -25,7 +9,7 @@ namespace salaryProgram
         private List<int> countOfProducts = new List<int>();
 
 
-         public SalaryClass(List<string> namesOfProducts, List<int> pricesOfProducts, List<string> dateOfProduction, List<int> expireDays, List<int> countOfProducts)
+        public SalaryClass(List<string> namesOfProducts, List<int> pricesOfProducts, List<string> dateOfProduction, List<int> expireDays, List<int> countOfProducts)
         {
             this.namesOfProducts = namesOfProducts;
             this.pricesOfProducts = pricesOfProducts;
@@ -45,13 +29,21 @@ namespace salaryProgram
 
         public void show()
         {
+
             if (namesOfProducts.Count > 0)
             {
-                Console.WriteLine("Show list (placeholder)");
+                Console.WriteLine("|Наименование\t|\tЦена\t|\tДата производства\t|\tСрок годности (дн.)\t|Количество|");
+                Console.WriteLine("------------\t|\t----\t|\t-----------------\t|\t-------------------\t|----------");
+                for (int i = 0; i < namesOfProducts.Count; ++i)
+                {
+                    Console.WriteLine("{0}\t\t{1}\t\t{2}\t\t\t\t{3}\t\t\t{4}", namesOfProducts[i], pricesOfProducts[i], dateOfProduction[i], expireDays[i], countOfProducts[i]);
+                }
+
+
             }
             else
             {
-                Console.WriteLine("[!] List is empty");
+                Console.WriteLine("[!] Список пуст");
             }
         }
 
@@ -59,11 +51,25 @@ namespace salaryProgram
         {
             if (namesOfProducts.Count > 0)
             {
-                Console.WriteLine("Show list (placeholder)");
+                Console.WriteLine("|Наименование\t|\tЦена\t|\tДата производства\t|\tСрок годности (дн.)\t|Количество|");
+                Console.WriteLine("------------\t|\t----\t|\t-----------------\t|\t-------------------\t|----------");
+                int totalSum = 0;
+                for (int i = 0; i < namesOfProducts.Count; i++)
+                {
+
+                    DateTime dt = DateTime.Parse(dateOfProduction[i]);
+                    DateTime ftDT = DateTime.Parse(dateOfProduction[i]).AddDays(expireDays[i]);
+                    if ((ftDT - DateTime.Now).TotalDays <=2 && (ftDT - DateTime.Now).TotalDays >= 0)
+                    {
+                        Console.WriteLine("{0}\t\t{1}\t\t{2}\t\t\t\t{3}\t\t\t{4}", namesOfProducts[i], pricesOfProducts[i], dateOfProduction[i], expireDays[i], countOfProducts[i]);
+                        totalSum += pricesOfProducts[i];
+                    }
+                }
+                Console.WriteLine("Общая стоимость: {0}", totalSum);
             }
             else
             {
-                Console.WriteLine("[!] List is empty");
+                Console.WriteLine("[!] Список пуст");
             }
         }
     }
@@ -109,9 +115,9 @@ namespace salaryProgram
                                 Console.WriteLine("[!] Минимальное количество знаков для имени: 3, попробуйте ещё раз");
                             }
                         }
-                        
+
                         while (priceAdd < 1)
-                        {   
+                        {
                             try
                             {
                                 Console.Write("Введите цену: ");
@@ -176,6 +182,7 @@ namespace salaryProgram
                             }
                         }
                         Console.WriteLine("DEBUG: {0} {1} {2} {3} {4}", nameAdd, priceAdd, dateAdd, expireDaysAdd, countAdd);
+                        customer.add(nameAdd, priceAdd, dateAdd, expireDaysAdd, countAdd);
                         Console.WriteLine("Запись добавлена!");
                         break;
                     case "q":
@@ -184,7 +191,16 @@ namespace salaryProgram
                     case "e":
                         activeProg = false;
                         break;
-                    default: 
+                    case "t":
+                        string nameTest = "testName";
+                        int priceTest = 12;
+                        string dateTest = "12.01.2001";
+                        int expireTest = 3;
+                        int countTest = 4;
+                        customer.add(nameTest, priceTest, dateTest, expireTest, countTest);
+                        Console.WriteLine("TEST: Запись добавлена!");
+                        break;
+                    default:
                         Console.WriteLine("Неправильная команда");
                         break;
                 }
