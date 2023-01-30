@@ -7,15 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_films", "4_films\4_films.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_football", "ConsoleApp1\4_football.csproj", "{9C298573-52C2-4F10-8A6B-4E3E9912A977}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_humans", "4_humans\4_humans.csproj", "{C362EA2B-F4F6-44D0-96FD-9FA4E4E8E617}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_humans", "4_humans\4_humans.csproj", "{C362EA2B-F4F6-44D0-96FD-9FA4E4E8E617}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_matrix(9)", "3_matrix(9)\3_matrix(9).csproj", "{2CA0E38C-F81B-4CA9-AA2E-F4C8971339E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3_matrix(9)", "3_matrix(9)\3_matrix(9).csproj", "{2CA0E38C-F81B-4CA9-AA2E-F4C8971339E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_matrix(13)", "3_matrix(13)\3_matrix(13).csproj", "{0C68F9D5-8B6F-4C8C-8ADD-CDC49ABC88A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3_matrix(13)", "3_matrix(13)\3_matrix(13).csproj", "{0C68F9D5-8B6F-4C8C-8ADD-CDC49ABC88A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_transport", "5_transport\5_transport.csproj", "{D7C47522-2F8E-4E3C-97A1-967A4D8B279F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "5_transport", "5_transport\5_transport.csproj", "{D7C47522-2F8E-4E3C-97A1-967A4D8B279F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3_matrix(2)", "3_matrix(2)\3_matrix(2).csproj", "{AAD7566C-FE19-4550-89AD-0678E6F27D03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3_matrix(2)", "3_matrix(2)\3_matrix(2).csproj", "{AAD7566C-FE19-4550-89AD-0678E6F27D03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_salary", "4_salary\4_salary.csproj", "{953F8D0E-8715-4F71-8D94-9998F6099E51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{AAD7566C-FE19-4550-89AD-0678E6F27D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAD7566C-FE19-4550-89AD-0678E6F27D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAD7566C-FE19-4550-89AD-0678E6F27D03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{953F8D0E-8715-4F71-8D94-9998F6099E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953F8D0E-8715-4F71-8D94-9998F6099E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953F8D0E-8715-4F71-8D94-9998F6099E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953F8D0E-8715-4F71-8D94-9998F6099E51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

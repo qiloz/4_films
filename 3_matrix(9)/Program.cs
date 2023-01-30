@@ -1,7 +1,4 @@
-﻿
-using System.Runtime.CompilerServices;
-
-namespace Program
+﻿namespace Program
 {
     class Matrix
     {
@@ -16,8 +13,8 @@ namespace Program
             width = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите ширину матрицы: ");
             height = Convert.ToInt32(Console.ReadLine());
-            
-            int[,] matrix = new int[width,height] ;
+
+            int[,] matrix = new int[width, height];
             int[] answerMatrix = new int[height];
 
 
@@ -57,7 +54,7 @@ namespace Program
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("Максимальное значение: {0}, Индекс: {1}\n",maxValue, maxIndex);
+            Console.WriteLine("Максимальное значение: {0}, Индекс: {1}\n", maxValue, maxIndex);
 
             for (int i = 0; i < answerMatrix.GetLength(0); i++)
             {

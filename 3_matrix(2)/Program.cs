@@ -1,7 +1,4 @@
-﻿
-using System.Runtime.CompilerServices;
-
-namespace Program
+﻿namespace Program
 {
     class Matrix
     {
@@ -47,7 +44,7 @@ namespace Program
                 double sum = 0;
                 for (int i = 0; i < matrix.GetLength(0); i++)
                 {
-                    if (matrix[i,j] < 0)
+                    if (matrix[i, j] < 0)
                     {
                         sum += matrix[i, j];
                     }
@@ -61,7 +58,7 @@ namespace Program
             Console.WriteLine();
             for (int i = 0; i < answerMatrix.GetLength(0); i++)
             {
-                Console.Write("{0}\t", Math.Round(answerMatrix[i],2));
+                Console.Write("{0}\t", Math.Round(answerMatrix[i], 2));
             }
             Console.ReadLine();
         }

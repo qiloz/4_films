@@ -1,7 +1,4 @@
-﻿
-using System.Runtime.CompilerServices;
-
-namespace Program
+﻿namespace Program
 {
     class Matrix
     {
@@ -32,7 +29,7 @@ namespace Program
 
             int maxValue = -1;
             int minValue = 101;
-            
+
             for (int i = 0; i < matrix.GetLength(0); i++) // print
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -41,7 +38,7 @@ namespace Program
                     {
                         maxValue = matrix[i, j];
                     }
-                    if (matrix[i,j] < minValue)
+                    if (matrix[i, j] < minValue)
                     {
                         minValue = matrix[i, j];
                     }
@@ -50,8 +47,8 @@ namespace Program
                 Console.WriteLine();
             }
             Console.WriteLine();
-            
-            Console.WriteLine("Максимальное значение: {0}, Минимальное значение: {1}, Сумма: {2}\n", maxValue, minValue, maxValue+minValue);
+
+            Console.WriteLine("Максимальное значение: {0}, Минимальное значение: {1}, Сумма: {2}\n", maxValue, minValue, maxValue + minValue);
         }
     }
 }

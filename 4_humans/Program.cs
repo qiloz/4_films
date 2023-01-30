@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Xml;
+﻿using System.Text.RegularExpressions;
 
 namespace consoleApp
 {
@@ -191,7 +186,8 @@ namespace consoleApp
             if (gender == "м" || gender == "М" || gender == "ж" || gender == "Ж")
             {
                 return true;
-            } else
+            }
+            else
             {
                 return false;
             }
@@ -202,7 +198,8 @@ namespace consoleApp
             if (speciality.Length > 3 && speciality.Length < 30)
             {
                 return true;
-            } else
+            }
+            else
             {
                 return false;
             }

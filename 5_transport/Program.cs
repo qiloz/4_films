@@ -24,7 +24,8 @@
             this.dateOfConstruct = dateOfConstruct;
         }
 
-        public void show() {
+        public void show()
+        {
             Console.WriteLine("{0} {1} {2} {3}", code, measure, manufacture, dateOfConstruct);
         }
 

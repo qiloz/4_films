@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace consoleApp
 {
@@ -40,7 +36,8 @@ namespace consoleApp
                 }
                 avg = avg / prices.Count;
                 Console.WriteLine("Средняя цена: {0}", avg);
-            } else
+            }
+            else
             {
                 Console.WriteLine("Список пуст!");
             }
@@ -66,11 +63,12 @@ namespace consoleApp
                         Console.WriteLine("{0}                      {1}                         {2}        ", names[i], timeOfstart[i], prices[i]);
                     }
                 }
-            } else
+            }
+            else
             {
                 Console.WriteLine("Список пуст!");
             }
-            
+
         }
         private static bool isValidQuestTime(string time)
         {
@@ -141,7 +139,7 @@ namespace consoleApp
                     cost = Convert.ToInt32(costAcc);
                     film.add(title, time, cost);
                     Console.WriteLine("Запись добавлена");
-                } 
+                }
                 else
                 {
                     Console.WriteLine("Неправильная команда!");

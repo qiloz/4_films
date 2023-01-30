@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace consoleApp
 {
@@ -34,7 +30,7 @@ namespace consoleApp
             if (names.Count > 0)
             {
                 var today = DateTime.Today;
-                
+
                 Console.WriteLine("ФИО        |         Дата рождения         |       Количество игр        |       Жёлтые карточки        |");
                 Console.WriteLine("---------------------------------------------------------------------------------------------------------");
                 for (int i = 0; i < names.Count; i++)
@@ -52,7 +48,7 @@ namespace consoleApp
         {
             if (names.Count > 0)
             {
-                
+
 
                 Console.WriteLine("ФИО        |         Дата рождения         |       Количество игр        |       Жёлтые карточки        |");
                 Console.WriteLine("---------------------------------------------------------------------------------------------------------");
@@ -133,14 +129,15 @@ namespace consoleApp
                         if (!isValidDate(date))
                         {
                             Console.WriteLine("Введите корректную дату! (regex err)");
-                        } else
+                        }
+                        else
                         {
                             try
                             {
                                 DateTime dt = DateTime.Parse(date);
                                 Console.WriteLine($"{date:d MMMM, yyyy}");
                                 successParseDate = true;
-                            } 
+                            }
                             catch (FormatException e)
                             {
                                 Console.WriteLine("Введите корректную дату! (parsedate err)");
