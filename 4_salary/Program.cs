@@ -59,7 +59,7 @@
 
                     DateTime dt = DateTime.Parse(dateOfProduction[i]);
                     DateTime ftDT = DateTime.Parse(dateOfProduction[i]).AddDays(expireDays[i]);
-                    if ((ftDT - DateTime.Now).TotalDays <=2 && (ftDT - DateTime.Now).TotalDays >= 0)
+                    if ((ftDT - DateTime.Now).TotalDays <= 2 && (ftDT - DateTime.Now).TotalDays >= 0)
                     {
                         Console.WriteLine("{0}\t\t{1}\t\t{2}\t\t\t\t{3}\t\t\t{4}", namesOfProducts[i], pricesOfProducts[i], dateOfProduction[i], expireDays[i], countOfProducts[i]);
                         totalSum += pricesOfProducts[i];

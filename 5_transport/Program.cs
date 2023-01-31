@@ -29,9 +29,9 @@
             Console.WriteLine("{0} {1} {2} {3}", code, measure, manufacture, dateOfConstruct);
         }
 
-        public void compare()
+        public void compare(Transport obj1)
         {
-            Console.WriteLine("");
+            Console.WriteLine("Сравнение класса: {0}", (this == obj1));
         }
 
         public void set_edit(int code, int measure, string manufacture, string dateOfConstruct)
@@ -83,7 +83,7 @@
             Transport trc1 = new Transport(code, measure, manufacture, dateOfConstruct);
             Transport trc2 = new Transport(code, measure, manufacture, dateOfConstruct);
 
-            trc.measure = 12;
+            trc.measure = 29;
             trc.set_edit(code, measure, manufacture, dateOfConstruct);
 
             test.show();
@@ -92,13 +92,14 @@
             trc2.show();
 
             trc.set();
-            //trc1.set();
-            //trc2.set();
+            // trc1.set();
+            // trc2.set();
 
             test.show();
             trc.show();
             trc1.show();
             trc2.show();
+            trc1.compare(trc1);
 
             Transport outputPlus = trc + trc1;
             Console.WriteLine(outputPlus.measure);
