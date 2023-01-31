@@ -96,6 +96,7 @@
 
 
             test.show();
+            auto.show();
             auto1.compare(auto1);
 
             Special outputPlus = auto + auto1;

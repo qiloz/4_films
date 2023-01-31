@@ -247,7 +247,7 @@
             salary = 0;
         }
 
-        public FinanceInfo(int code, string name, int persons, string directorName, string dateOfappear, int annual, int salary, int clientsCount) : base(code, name, persons, directorName, dateOfappear, annual, clientsCount)
+        public FinanceInfo(int code, string name, int persons, string directorName, string dateOfappear, int annual, int salary) : base(code, name, persons, directorName, dateOfappear, annual)
         {
             this.code = code;
             this.name = name;
