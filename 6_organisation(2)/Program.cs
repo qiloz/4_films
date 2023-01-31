@@ -258,15 +258,10 @@
             this.salary = salary;
         }
 
-        public override void typeOfOrganisation()
-        {
-            Console.WriteLine("Тип организации: {0}", OrganisationID);
-        }
-
         public override void show()
         {
             typeOfOrganisation();
-            Console.WriteLine("Код организации: {0} | Имя организации: {1} | Количество персонала: {2} | Директор: {3} | Дата регистрации: {4} | Годовой оборот: {5} | Количество продаж: {6}", code, name, persons, directorName, dateOfappear, annual, salary);
+            Console.WriteLine("Количество продаж: {0}", salary);
         }
     }
 
@@ -297,15 +292,10 @@
             this.creditsGiven = creditsGiven;
         }
 
-        public override void typeOfOrganisation()
-        {
-            Console.WriteLine("Тип организации: {0}", OrganisationID);
-        }
-
         public override void show()
         {
             typeOfOrganisation();
-            Console.WriteLine("Код организации: {0} | Имя организации: {1} | Количество персонала: {2} | Директор: {3} | Дата регистрации: {4} | Годовой оборот: {5} | Выдано кредитов: {6}", code, name, persons, directorName, dateOfappear, annual, creditsGiven);
+            Console.WriteLine("Годовой оборот: {0} | Выдано кредитов: {1}", annual, creditsGiven);
         }
     }
 
@@ -335,15 +325,10 @@
             this.resourceCount = resourceCount;
         }
 
-        public override void typeOfOrganisation()
-        {
-            Console.WriteLine("Тип организации: {0}", OrganisationID);
-        }
-
         public override void show()
         {
             typeOfOrganisation();
-            Console.WriteLine("Код организации: {0} | Имя организации: {1} | Количество персонала: {2} | Директор: {3} | Дата регистрации: {4} | Профиль направления: {5} | Количество ресурсов: {6} ", code, name, persons, directorName, dateOfappear, profileOfproduct, resourceCount);
+            Console.WriteLine("Профиль направления: {0} | Количество ресурсов: {1} ", profileOfproduct, resourceCount);
         }
     }
 
@@ -486,7 +471,7 @@
                             banks[indexArray].CountPersons = Convert.ToInt32(elements[2]);
                             banks[indexArray].Director = elements[3];
                             banks[indexArray].DateOfAppear = elements[4];
-                            banks[indexArray].annual = Convert.ToInt32(elements[5]);
+                            banksInfo[indexArray].annual = Convert.ToInt32(elements[5]);
                             banksInfo[indexArray].creditsGiven = Convert.ToInt32(elements[6]);
 
 
