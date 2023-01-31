@@ -1,5 +1,4 @@
-﻿using System;
-namespace OrganisationProgram
+﻿namespace OrganisationProgram
 {
     abstract class Organisation
     {
@@ -248,7 +247,7 @@ namespace OrganisationProgram
             salary = 0;
         }
 
-        public FinanceInfo(int code, string name, int persons, string directorName, string dateOfappear, int annual, int salary,int clientsCount) : base (code, name, persons, directorName, dateOfappear, annual, clientsCount)
+        public FinanceInfo(int code, string name, int persons, string directorName, string dateOfappear, int annual, int salary, int clientsCount) : base(code, name, persons, directorName, dateOfappear, annual, clientsCount)
         {
             this.code = code;
             this.name = name;
@@ -287,7 +286,7 @@ namespace OrganisationProgram
             creditsGiven = 0;
         }
 
-        public BankInfo(int code, string name, int persons, string directorName, string dateOfappear, int annual, int clientsCount ,int creditsGiven) : base (code, name, persons, directorName, dateOfappear, annual, clientsCount)
+        public BankInfo(int code, string name, int persons, string directorName, string dateOfappear, int annual, int clientsCount, int creditsGiven) : base(code, name, persons, directorName, dateOfappear, annual, clientsCount)
         {
             this.code = code;
             this.name = name;
@@ -325,7 +324,7 @@ namespace OrganisationProgram
             resourceCount = 0;
         }
 
-        public FactoryInfo(int code, string name, int persons, string directorName, string dateOfappear, string profileOfproduct, int resourceCount) : base (code, name, persons, directorName, dateOfappear, profileOfproduct)
+        public FactoryInfo(int code, string name, int persons, string directorName, string dateOfappear, string profileOfproduct, int resourceCount) : base(code, name, persons, directorName, dateOfappear, profileOfproduct)
         {
             this.code = code;
             this.name = name;

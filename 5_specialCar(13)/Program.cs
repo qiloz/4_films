@@ -82,7 +82,7 @@
             Special test = new Special();
             Special auto = new Special(code, measure, contact, dateOfConstruct);
             Special auto1 = new Special(code, measure, contact, dateOfConstruct);
-            Special auto2= new Special(code, measure, contact, dateOfConstruct);
+            Special auto2 = new Special(code, measure, contact, dateOfConstruct);
 
             auto.measure = 29;
             auto.set_edit(code, measure, contact, dateOfConstruct);
