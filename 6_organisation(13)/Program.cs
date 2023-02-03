@@ -361,7 +361,7 @@
                             paramedicTransport[indexArray].maxSpeed = Convert.ToInt32(elements[5]);
                             paramedicTransport[indexArray].oxygen = Convert.ToInt32(elements[6]);
 
-                            fireLadderTransport[indexArray].show();
+                            paramedicTransport[indexArray].show();
 
                             indexArray++;
                         }
